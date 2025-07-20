@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(135deg, #153677, #4e085f);
+    margin: 0;
+    overflow: hidden;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #153677, #4e085f);
+    padding: 10px;
+    overflow: hidden;
+}
+
+.todo-app{
+    width: 90%;
+    max-width: 470px;
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+
+.todo-app h2{
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-family: "Bitcount Grid Single", system-ui;
+}
+
+.todo-app img{
+    width: 30px;
+    margin-left: 12px;
+}
+
+.row{
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+}
+
+
+ul li{
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;  /*line ensures users can't highlight or copy the text inside those <li> elements.*/
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before{
+    content: ''; /*Required to make the pseudo-element render, even if it's just an empty string.*/
+    position: absolute; /*- Positions the icon relative to the <li> (which is set to position: relative).*/
+    height: 28px;
+    width: 28px; /*- height & width: 28px → Creates a square box for the icon.*/
+    border-radius: 50%;  /*Makes it a perfect circle.*/
+    background-image: url(./radio.png); /*Loads your custom radio-style image.*/
+    background-size: cover; /*Ensures the image fills the circle*/
+    background-position: center;  /*Keeps the image centered.*/
+    top: 10px;
+    left: 8px; /*Positions the icon nicely inside the padding space.*/
+}
+
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li.checked::before{
+    background-image: url(./checked.png);
+}
+
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+ul li span:hover{
+    background: #edeef0;
+}
+
+@media(width<450px){
+    input{
+        width: 10px;
+    }
+    button {
+        width: 100px;
+        padding: 16px 0;
+        font-size: 14px;
+    }
+}
